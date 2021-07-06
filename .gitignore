@@ -98,3 +98,5 @@ chia-blockchain-gui/src/locales/_build
 build_scripts\win_build
 build_scripts/win_build
 win_code_sign_cert.p12
+
+make_wallet_addr.py

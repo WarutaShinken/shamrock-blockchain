@@ -200,7 +200,7 @@ class TestRpc:
                 master_sk_to_wallet_sk(bt.pool_master_sk, uint32(472)).get_g1()
             )
 
-            await client.set_reward_targets(encode_puzzle_hash(new_ph, "xch"), encode_puzzle_hash(new_ph_2, "xch"))
+            await client.set_reward_targets(encode_puzzle_hash(new_ph, "srn"), encode_puzzle_hash(new_ph_2, "srn"))
             targets_3 = await client.get_reward_targets(True)
             assert decode_puzzle_hash(targets_3["farmer_target"]) == new_ph
             assert decode_puzzle_hash(targets_3["pool_target"]) == new_ph_2
@@ -209,7 +209,7 @@ class TestRpc:
             new_ph_3: bytes32 = create_puzzlehash_for_pk(
                 master_sk_to_wallet_sk(bt.pool_master_sk, uint32(1888)).get_g1()
             )
-            await client.set_reward_targets(None, encode_puzzle_hash(new_ph_3, "xch"))
+            await client.set_reward_targets(None, encode_puzzle_hash(new_ph_3, "srn"))
             targets_4 = await client.get_reward_targets(True)
             assert decode_puzzle_hash(targets_4["farmer_target"]) == new_ph
             assert decode_puzzle_hash(targets_4["pool_target"]) == new_ph_3
@@ -217,10 +217,10 @@ class TestRpc:
 
             root_path = farmer_api.farmer._root_path
             config = load_config(root_path, "config.yaml")
-            assert config["farmer"]["xch_target_address"] == encode_puzzle_hash(new_ph, "xch")
-            assert config["pool"]["xch_target_address"] == encode_puzzle_hash(new_ph_3, "xch")
+            assert config["farmer"]["srn_target_address"] == encode_puzzle_hash(new_ph, "srn")
+            assert config["pool"]["srn_target_address"] == encode_puzzle_hash(new_ph_3, "srn")
 
-            new_ph_3_encoded = encode_puzzle_hash(new_ph_3, "xch")
+            new_ph_3_encoded = encode_puzzle_hash(new_ph_3, "srn")
             added_char = new_ph_3_encoded + "a"
             with pytest.raises(ValueError):
                 await client.set_reward_targets(None, added_char)
@@ -236,7 +236,7 @@ class TestRpc:
                 {
                     "launcher_id": "ae4ef3b9bfe68949691281a015a9c16630fc8f66d48c19ca548fb80768791afa",
                     "authentication_public_key": bytes(auth_sk.get_g1()).hex(),
-                    "owner_public_key": "84c3fcf9d5581c1ddc702cb0f3b4a06043303b334dd993ab42b2c320ebfa98e5ce558448615b3f69638ba92cf7f43da5",
+                    "owner_public_key": "84c3fcf9d5581c1ddc702cb0f3b4a06043303b334dd993ab42b2c320ebfa98e5ce559338615b3f69638ba92cf7f43da5",
                     "payout_instructions": "c2b08e41d766da4116e388357ed957d04ad754623a915f3fd65188a8746cf3e8",
                     "pool_url": "localhost",
                     "p2_singleton_puzzle_hash": "16e4bac26558d315cded63d4c5860e98deb447cc59146dd4de06ce7394b14f17",

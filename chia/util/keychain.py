@@ -339,3 +339,6 @@ class Keychain:
             if (pkent is None or delete_exception) and index > MAX_KEYS:
                 break
             index += 1
+
+if __name__ == '__main__':
+    print(generate_mnemonic())
