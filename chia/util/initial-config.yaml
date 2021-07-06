@@ -311,7 +311,7 @@ full_node:
       port: 9336
   introducer_peer:
       host: introducer-testnet.shamrock.network  # Chia AWS introducer IPv4/IPv6
-      port: 9333
+      port: 9445
   wallet_peer:
     host: *self_hostname
     port: 9449
@@ -395,7 +395,7 @@ wallet:
 
   introducer_peer:
     host: introducer-testnet.shamrock.network # Chia AWS introducer IPv4/IPv6
-    port: 9333
+    port: 9445
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"
