@@ -14,18 +14,18 @@ from blspy import G2Element
 
 from clvm_tools.binutils import assemble
 
-from chia.consensus.blockchain import ReceiveBlockResult
-from chia.consensus.constants import ConsensusConstants
-from chia.types.announcement import Announcement
-from chia.types.blockchain_format.program import Program
-from chia.types.coin_record import CoinRecord
-from chia.types.coin_solution import CoinSolution
-from chia.types.condition_opcodes import ConditionOpcode
-from chia.types.full_block import FullBlock
-from chia.types.spend_bundle import SpendBundle
+from shamrock.consensus.blockchain import ReceiveBlockResult
+from shamrock.consensus.constants import ConsensusConstants
+from shamrock.types.announcement import Announcement
+from shamrock.types.blockchain_format.program import Program
+from shamrock.types.coin_record import CoinRecord
+from shamrock.types.coin_solution import CoinSolution
+from shamrock.types.condition_opcodes import ConditionOpcode
+from shamrock.types.full_block import FullBlock
+from shamrock.types.spend_bundle import SpendBundle
 from tests.block_tools import BlockTools, test_constants
-from chia.util.errors import Err
-from chia.util.ints import uint32
+from shamrock.util.errors import Err
+from shamrock.util.ints import uint32
 
 from .ram_db import create_ram_blockchain
 

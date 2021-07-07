@@ -8,27 +8,27 @@ from typing import Optional, List, Dict
 import pytest
 from blspy import G1Element, AugSchemeMPL
 
-from chia.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from chia.plotting.create_plots import create_plots
-from chia.pools.pool_wallet_info import PoolWalletInfo, PoolSingletonState
-from chia.protocols import full_node_protocol
-from chia.protocols.full_node_protocol import RespondBlock
-from chia.rpc.rpc_server import start_rpc_server
-from chia.rpc.wallet_rpc_api import WalletRpcApi
-from chia.rpc.wallet_rpc_client import WalletRpcClient
-from chia.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
-from chia.types.blockchain_format.proof_of_space import ProofOfSpace
-from chia.types.blockchain_format.sized_bytes import bytes32
+from shamrock.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from shamrock.plotting.create_plots import create_plots
+from shamrock.pools.pool_wallet_info import PoolWalletInfo, PoolSingletonState
+from shamrock.protocols import full_node_protocol
+from shamrock.protocols.full_node_protocol import RespondBlock
+from shamrock.rpc.rpc_server import start_rpc_server
+from shamrock.rpc.wallet_rpc_api import WalletRpcApi
+from shamrock.rpc.wallet_rpc_client import WalletRpcClient
+from shamrock.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
+from shamrock.types.blockchain_format.proof_of_space import ProofOfSpace
+from shamrock.types.blockchain_format.sized_bytes import bytes32
 
-from chia.types.peer_info import PeerInfo
-from chia.util.bech32m import encode_puzzle_hash
+from shamrock.types.peer_info import PeerInfo
+from shamrock.util.bech32m import encode_puzzle_hash
 from tests.block_tools import get_plot_dir, get_plot_tmp_dir
-from chia.util.config import load_config
-from chia.util.hash import std_hash
-from chia.util.ints import uint16, uint32
-from chia.wallet.derive_keys import master_sk_to_local_sk
-from chia.wallet.transaction_record import TransactionRecord
-from chia.wallet.util.wallet_types import WalletType
+from shamrock.util.config import load_config
+from shamrock.util.hash import std_hash
+from shamrock.util.ints import uint16, uint32
+from shamrock.wallet.derive_keys import master_sk_to_local_sk
+from shamrock.wallet.transaction_record import TransactionRecord
+from shamrock.wallet.util.wallet_types import WalletType
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets, bt
 from tests.time_out_assert import time_out_assert
 

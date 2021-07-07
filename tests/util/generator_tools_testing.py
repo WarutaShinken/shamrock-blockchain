@@ -1,11 +1,11 @@
 from typing import List, Tuple
 
-from chia.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from chia.types.blockchain_format.coin import Coin
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.types.full_block import FullBlock
-from chia.types.generator_types import BlockGenerator
-from chia.util.generator_tools import additions_for_npc
+from shamrock.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from shamrock.types.blockchain_format.coin import Coin
+from shamrock.types.blockchain_format.sized_bytes import bytes32
+from shamrock.types.full_block import FullBlock
+from shamrock.types.generator_types import BlockGenerator
+from shamrock.util.generator_tools import additions_for_npc
 
 
 def run_and_get_removals_and_additions(

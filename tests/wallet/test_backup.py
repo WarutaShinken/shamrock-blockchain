@@ -4,12 +4,12 @@
 #
 # import pytest
 #
-# from chia.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
-# from chia.simulator.simulator_protocol import FarmNewBlockProtocol
-# from chia.types.peer_info import PeerInfo
-# from chia.util.ints import uint16, uint32, uint64
+# from shamrock.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
+# from shamrock.simulator.simulator_protocol import FarmNewBlockProtocol
+# from shamrock.types.peer_info import PeerInfo
+# from shamrock.util.ints import uint16, uint32, uint64
 # from tests.setup_nodes import setup_simulators_and_wallets
-# from chia.wallet.cc_wallet.cc_wallet import CCWallet
+# from shamrock.wallet.cc_wallet.cc_wallet import CCWallet
 # from tests.time_out_assert import time_out_assert
 #
 #

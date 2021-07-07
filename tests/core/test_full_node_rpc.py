@@ -4,18 +4,18 @@ import logging
 import pytest
 from blspy import AugSchemeMPL
 
-from chia.consensus.pot_iterations import is_overflow_block
-from chia.full_node.signage_point import SignagePoint
-from chia.protocols import full_node_protocol
-from chia.rpc.full_node_rpc_api import FullNodeRpcApi
-from chia.rpc.full_node_rpc_client import FullNodeRpcClient
-from chia.rpc.rpc_server import start_rpc_server
-from chia.simulator.simulator_protocol import FarmNewBlockProtocol
-from chia.types.spend_bundle import SpendBundle
-from chia.types.unfinished_block import UnfinishedBlock
+from shamrock.consensus.pot_iterations import is_overflow_block
+from shamrock.full_node.signage_point import SignagePoint
+from shamrock.protocols import full_node_protocol
+from shamrock.rpc.full_node_rpc_api import FullNodeRpcApi
+from shamrock.rpc.full_node_rpc_client import FullNodeRpcClient
+from shamrock.rpc.rpc_server import start_rpc_server
+from shamrock.simulator.simulator_protocol import FarmNewBlockProtocol
+from shamrock.types.spend_bundle import SpendBundle
+from shamrock.types.unfinished_block import UnfinishedBlock
 from tests.block_tools import get_signage_point
-from chia.util.hash import std_hash
-from chia.util.ints import uint16, uint8
+from shamrock.util.hash import std_hash
+from shamrock.util.ints import uint16, uint8
 from tests.wallet_tools import WalletTool
 from tests.connection_utils import connect_and_get_peer
 from tests.setup_nodes import bt, self_hostname, setup_simulators_and_wallets, test_constants

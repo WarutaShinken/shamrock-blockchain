@@ -8,14 +8,14 @@ import aiosqlite
 import pytest
 from clvm_tools import binutils
 
-from chia.types.blockchain_format.coin import Coin
-from chia.types.blockchain_format.program import Program, SerializedProgram
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.types.coin_solution import CoinSolution
-from chia.util.db_wrapper import DBWrapper
-from chia.util.ints import uint64
+from shamrock.types.blockchain_format.coin import Coin
+from shamrock.types.blockchain_format.program import Program, SerializedProgram
+from shamrock.types.blockchain_format.sized_bytes import bytes32
+from shamrock.types.coin_solution import CoinSolution
+from shamrock.util.db_wrapper import DBWrapper
+from shamrock.util.ints import uint64
 
-from chia.wallet.wallet_pool_store import WalletPoolStore
+from shamrock.wallet.wallet_pool_store import WalletPoolStore
 
 log = logging.getLogger(__name__)
 

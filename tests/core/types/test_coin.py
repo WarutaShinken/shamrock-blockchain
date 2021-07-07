@@ -1,7 +1,7 @@
-from chia.types.blockchain_format.coin import Coin
-from chia.types.blockchain_format.sized_bytes import bytes32
-from chia.util.ints import uint64
-from chia.util.hash import std_hash
+from shamrock.types.blockchain_format.coin import Coin
+from shamrock.types.blockchain_format.sized_bytes import bytes32
+from shamrock.util.ints import uint64
+from shamrock.util.hash import std_hash
 import io
 
 
