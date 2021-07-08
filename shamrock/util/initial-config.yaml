@@ -18,19 +18,6 @@ network_overrides: &network_overrides
     mainnet:
       address_prefix: "srn"
       default_full_node_port: 9333
-    testnet0:
-      address_prefix: "tsrn"
-    testnet1:
-      address_prefix: "tsrn"
-    testnet2:
-      address_prefix: "tsrn"
-    testnet3:
-      address_prefix: "tsrn"
-    testnet4:
-      address_prefix: "tsrn"
-    testnet7:
-      address_prefix: "tsrn"
-      default_full_node_port: 59333
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.shamrock.net/notify/mainnet_alert.txt
@@ -294,7 +281,7 @@ ui:
 introducer:
   host: *self_hostname
   port: 9445
-  max_peers_to_send: 20
+    max_peers_to_send: 20
   # The introducer will only return peers who it has seen in the last
   # recent_peer_threshold seconds
   recent_peer_threshold: 6000
