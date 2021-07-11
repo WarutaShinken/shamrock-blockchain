@@ -4,9 +4,9 @@ from .constants import ConsensusConstants
 
 testnet_kwargs = {
     "SLOT_BLOCKS_TARGET": 512,
-    "MIN_BLOCKS_PER_CHALLENGE_BLOCK": 255,  # Must be less than half of SLOT_BLOCKS_TARGET
+    "MIN_BLOCKS_PER_CHALLENGE_BLOCK": 200,  # Must be less than half of SLOT_BLOCKS_TARGET
     "MAX_SUB_SLOT_BLOCKS": 2048,  # Must be less than half of SUB_EPOCH_BLOCKS
-    "NUM_SPS_SUB_SLOT": 64,  # Must be a power of 2
+    "NUM_SPS_SUB_SLOT": 16,  # Must be a power of 2
     # "SUB_SLOT_ITERS_STARTING": 2 ** 27,
     "SUB_SLOT_ITERS_STARTING": 2 ** 7,
     # DIFFICULTY_STARTING is the starting difficulty for the first epoch, which is then further
@@ -27,7 +27,7 @@ testnet_kwargs = {
     "MIN_PLOT_SIZE": 32,  # 32 for mainnet
     "MAX_PLOT_SIZE": 50,
     "SUB_SLOT_TIME_TARGET": 600,  # The target number of seconds per slot, mainnet 600
-    "NUM_SP_INTERVALS_EXTRA": 3,  # The number of sp intervals to add to the signage point
+    "NUM_SP_INTERVALS_EXTRA": 2,  # The number of sp intervals to add to the signage point
     "MAX_FUTURE_TIME": 5 * 60,  # The next block can have a timestamp of at most these many seconds in the future
     "NUMBER_OF_TIMESTAMPS": 11,  # Than the average of the last NUMBER_OF_TIMESTAMPS blocks
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
@@ -48,7 +48,7 @@ testnet_kwargs = {
     ),
     "MAX_VDF_WITNESS_SIZE": 64,
     # Size of mempool = 50x the size of block
-    "MEMPOOL_BLOCK_BUFFER": 50,
+    "MEMPOOL_BLOCK_BUFFER": 1000,
     # Max coin amount, fits into 64 bits
     "MAX_COIN_AMOUNT": uint64((1 << 64) - 1),
     # Max block cost in clvm cost units
@@ -56,10 +56,10 @@ testnet_kwargs = {
     # The cost per byte of generator program
     "COST_PER_BYTE": 12000,
     "WEIGHT_PROOF_THRESHOLD": 2,
-    "BLOCKS_CACHE_SIZE": 4608 + (128 * 4),
+    "BLOCKS_CACHE_SIZE": 49152 + (2048 * 4),
     "WEIGHT_PROOF_RECENT_BLOCKS": 1000,
-    "MAX_BLOCK_COUNT_PER_REQUESTS": 32,  # Allow up to 32 blocks per request
-    "INITIAL_FREEZE_END_TIMESTAMP": 1620061200,  # Mon May 03 2021 17:00:00 GMT+0000
+    "MAX_BLOCK_COUNT_PER_REQUESTS": 512,  # Allow up to 32 blocks per request
+    "INITIAL_FREEZE_END_TIMESTAMP": 1625997875,
     "NETWORK_TYPE": 0,
     "MAX_GENERATOR_SIZE": 1000000,
     "MAX_GENERATOR_REF_LIST_SIZE": 512,  # Number of references allowed in the block generator ref list
