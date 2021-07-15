@@ -407,11 +407,11 @@ class FullNodeRpcApi:
             * eligible_plots_filter_multiplier
         )
         return {"space": uint128(int(network_space_bytes_estimate)),
-                # "delta_weight": delta_weight,
-                # "delta_iters": delta_iters,
-                # "weight_div_iters": weight_div_iters,
-                # "additional_difficulty_constant": additional_difficulty_constant,
-                # "eligible_plots_filter_multiplier": eligible_plots_filter_multiplier,
+                "delta_weight": delta_weight,
+                "delta_iters": delta_iters,
+                "weight_div_iters": weight_div_iters,
+                "additional_difficulty_constant": additional_difficulty_constant,
+                "eligible_plots_filter_multiplier": eligible_plots_filter_multiplier,
                 }
 
     async def get_coin_records_by_puzzle_hash(self, request: Dict) -> Optional[Dict]:
