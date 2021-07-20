@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from shamrock.consensus.constants import ConsensusConstants
-from shamrock.types.blockchain_format.sized_bytes import bytes32
+from shamrock.types.blockchain_format.sized_bytes import bytes100
 from shamrock.util.streamable import Streamable, streamable
 
 
@@ -14,13 +14,13 @@ class ClassgroupElement(Streamable):
     element (or multiple).
     """
 
-    data: bytes32
+    data: bytes100
 
     @staticmethod
     def from_bytes(data) -> "ClassgroupElement":
-        if len(data) < 32:
-            data += b"\x00" * (32 - len(data))
-        return ClassgroupElement(bytes32(data))
+        if len(data) < 100:
+            data += b"\x00" * (100 - len(data))
+        return ClassgroupElement(bytes100(data))
 
     @staticmethod
     def get_default_element() -> "ClassgroupElement":
@@ -30,4 +30,4 @@ class ClassgroupElement(Streamable):
 
     @staticmethod
     def get_size(constants: ConsensusConstants):
-        return 32
+        return 100
