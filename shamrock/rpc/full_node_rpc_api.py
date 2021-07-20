@@ -17,7 +17,6 @@ from shamrock.util.byte_types import hexstr_to_bytes
 from shamrock.util.ints import uint32, uint64, uint128
 from shamrock.util.ws_message import WsRpcMessage, create_payload_dict
 
-
 class FullNodeRpcApi:
     def __init__(self, service: FullNode):
         self.service = service
@@ -397,7 +396,8 @@ class FullNodeRpcApi:
         delta_weight = newer_block.weight - older_block.weight
 
         delta_iters = newer_block.total_iters - older_block.total_iters
-        weight_div_iters = delta_weight / delta_iters
+        ESTIMATE_SPACE_DIVIDED = int(pow(2, 27))
+        weight_div_iters = delta_weight / delta_iters / ESTIMATE_SPACE_DIVIDED
         additional_difficulty_constant = self.service.constants.DIFFICULTY_CONSTANT_FACTOR
         eligible_plots_filter_multiplier = 2 ** self.service.constants.NUMBER_ZERO_BITS_PLOT_FILTER
         network_space_bytes_estimate = (
