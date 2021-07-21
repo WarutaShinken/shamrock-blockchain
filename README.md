@@ -7,4 +7,4 @@
 Shamrock is a direct fork of the [Chia Network](https://github.com/Chia-Network/chia-blockchain) codebase, 100% owned by the community. Develops by the community. 
 Earn more while consuming minimal additional resources.
 
-Please visit the website https://shamrock.network/ for more details. 
+Please visit the website https://shamrock.network for more details. 
