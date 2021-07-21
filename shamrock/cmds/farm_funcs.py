@@ -13,7 +13,7 @@ from shamrock.util.ints import uint16
 from shamrock.util.misc import format_bytes
 from shamrock.util.misc import format_minutes
 
-SECONDS_PER_BLOCK = (24 * 3600) / 4608
+SECONDS_PER_BLOCK = (24 * 3600) / 86400
 
 
 async def get_plots(farmer_rpc_port: int) -> Optional[Dict[str, Any]]:
