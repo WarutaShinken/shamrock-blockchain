@@ -23,7 +23,7 @@ import click
         "Use 192 blocks to estimate over the last hour."
     ),
     type=str,
-    default="4608",
+    default="768",
 )
 @click.option(
     "-s",
