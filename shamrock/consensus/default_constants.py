@@ -12,7 +12,7 @@ testnet_kwargs = {
     # multiplied by another factor of DIFFICULTY_CONSTANT_FACTOR, to be used in the VDF iter calculation formula.
     "DIFFICULTY_CONSTANT_FACTOR": 2 ** 67,
     "DIFFICULTY_STARTING": 1,
-    "DIFFICULTY_CHANGE_MAX_FACTOR": 2,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
+    "DIFFICULTY_CHANGE_MAX_FACTOR": 1,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
     # These 3 constants must be changed at the same time
     "SUB_EPOCH_BLOCKS": 384,  # The number of blocks per sub-epoch, mainnet 384
     "EPOCH_BLOCKS": 768,  # The number of blocks per epoch, mainnet 4608. Must be multiple of SUB_EPOCH_SB
