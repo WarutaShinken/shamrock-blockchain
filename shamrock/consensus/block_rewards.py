@@ -1,7 +1,7 @@
 from shamrock.util.ints import uint32, uint64
 
-# 1 Shamrock coin = 1,000,000,000,000 = 1 decillion clover.
-_clover_per_shamrock = 10 ** 33
+# 1 Shamrock coin = 1,000,000,000,000 = 1 trillion clover.
+_clover_per_shamrock = 10 ** 12
 _blocks_per_year = 1681920  # 32 * 6 * 24 * 365
 
 
