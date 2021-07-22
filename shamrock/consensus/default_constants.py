@@ -12,7 +12,7 @@ testnet_kwargs = {
     # multiplied by another factor of DIFFICULTY_CONSTANT_FACTOR, to be used in the VDF iter calculation formula.
     "DIFFICULTY_CONSTANT_FACTOR": 2 ** 67,
     "DIFFICULTY_STARTING": 1,
-    "DIFFICULTY_CHANGE_MAX_FACTOR": 1,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
+    "DIFFICULTY_CHANGE_MAX_FACTOR": 2,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
     # These 3 constants must be changed at the same time
     "SUB_EPOCH_BLOCKS": 384,  # The number of blocks per sub-epoch, mainnet 384
     "EPOCH_BLOCKS": 768,  # The number of blocks per epoch, mainnet 4608. Must be multiple of SUB_EPOCH_SB
@@ -28,9 +28,9 @@ testnet_kwargs = {
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("10ad81590ecdef419304bf6aa04de12622b89626ebb66d7ce83ebdda693426b7"),
+    "GENESIS_CHALLENGE": bytes.fromhex("9f1d7d32fe9d79cda5875b444f026c8b9258eabd67324ff5c065cb960bad1b93"),
     # Forks of chia should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("a1aff362ee73eab0fed0e3ae82e12a6932128e9ee9bf7dcee0942f4cbcec5111"),
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("eb572b432e3124d044a590716df03edc52e9cbe46c28037bf928152600552122"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
     ),
