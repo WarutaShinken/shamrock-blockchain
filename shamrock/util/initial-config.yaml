@@ -11,7 +11,7 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: 6ce6f47b189a03df9f5de57a56d6358600f79d46d827e50e190449a7adbf4eae
+      GENESIS_CHALLENGE: f4d6cf901f9e9d833b74f1a09c38e95de5f3ccd249a6a48ef03412d00cccc6ba
       GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "6e95df6cad92e52ac0cac6d71be4daef0302ecbcfb7168747d12a53faed69079"
       GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "92c8beaf58ee8df3c736e9ff95551161ad9bcfe2d3a13934864b2787a1d2ff02"
   config:
