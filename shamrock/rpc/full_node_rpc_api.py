@@ -17,6 +17,8 @@ from shamrock.util.byte_types import hexstr_to_bytes
 from shamrock.util.ints import uint32, uint64, uint128
 from shamrock.util.ws_message import WsRpcMessage, create_payload_dict
 
+
+
 class FullNodeRpcApi:
     def __init__(self, service: FullNode):
         self.service = service
@@ -122,7 +124,7 @@ class FullNodeRpcApi:
         if peak is not None and peak.height > 1:
             newer_block_hex = peak.header_hash.hex()
             # Average over the last day
-            header_hash = self.service.blockchain.height_to_hash(uint32(max(1, peak.height - 4608)))
+            header_hash = self.service.blockchain.height_to_hash(uint32(max(1, peak.height - self.service.constants.EPOCH_BLOCKS)))
             assert header_hash is not None
             older_block_hex = header_hash.hex()
             space = await self.get_network_space(
