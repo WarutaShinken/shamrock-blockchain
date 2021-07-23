@@ -23,9 +23,9 @@ if [ ! "$SHAMROCK_INSTALLER_VERSION" ]; then
 fi
 echo "Shamrock Installer Version is: $SHAMROCK_INSTALLER_VERSION"
 
-echo "Installing npm and electron packagers"
-npm install electron-packager -g
-npm install electron-installer-debian -g
+echo "Installing yarn and electron packagers"
+yarn add electron-packager -g
+yarn add electron-installer-debian -g
 
 echo "Create dist/"
 rm -rf dist
@@ -45,13 +45,13 @@ cp -r dist/daemon ../shamrock-blockchain-gui
 cd .. || exit
 cd shamrock-blockchain-gui || exit
 
-echo "npm build"
-npm install
-npm audit fix
-npm run build
+echo "yarn build"
+yarn
+yarn audit fix
+yarn run build
 LAST_EXIT_CODE=$?
 if [ "$LAST_EXIT_CODE" -ne 0 ]; then
-	echo >&2 "npm run build failed!"
+	echo >&2 "yarn run build failed!"
 	exit $LAST_EXIT_CODE
 fi
 
