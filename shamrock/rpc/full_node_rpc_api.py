@@ -398,7 +398,8 @@ class FullNodeRpcApi:
         delta_weight = newer_block.weight - older_block.weight
 
         delta_iters = newer_block.total_iters - older_block.total_iters
-        ESTIMATE_SPACE_DIVIDED = int(pow(2, 27))
+        # ESTIMATE_SPACE_DIVIDED = int(pow(2, 27))
+        ESTIMATE_SPACE_DIVIDED = 1
         weight_div_iters = delta_weight / delta_iters / ESTIMATE_SPACE_DIVIDED
         additional_difficulty_constant = self.service.constants.DIFFICULTY_CONSTANT_FACTOR
         eligible_plots_filter_multiplier = 2 ** self.service.constants.NUMBER_ZERO_BITS_PLOT_FILTER
