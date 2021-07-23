@@ -21,16 +21,16 @@ testnet_kwargs = {
     "NUMBER_ZERO_BITS_PLOT_FILTER": 9,  # H(plot signature of the challenge) must start with these many zeroes
     "MIN_PLOT_SIZE": 32,  # 32 for mainnet
     "MAX_PLOT_SIZE": 50,
-    "SUB_SLOT_TIME_TARGET": 192,  # The target number of seconds per slot, mainnet 600
+    "SUB_SLOT_TIME_TARGET": 81.28,  # The target number of seconds per slot, mainnet 600
     "NUM_SP_INTERVALS_EXTRA": 3,  # The number of sp intervals to add to the signage point
     "MAX_FUTURE_TIME": 5 * 60,  # The next block can have a timestamp of at most these many seconds in the future
     "NUMBER_OF_TIMESTAMPS": 11,  # Than the average of the last NUMBER_OF_TIMESTAMPS blocks
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("6f8b6902cc57e7feb652f3ae5eb87970535d210908f52b2757c8d6a6c9751915"),
+    "GENESIS_CHALLENGE": bytes.fromhex("b32ba49917a3197fd5a5cb10d8c688e22e70d182a0d9d8def6eb53b518f6fd47"),
     # Forks of chia should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("42a8e1e672a660d22db61ac8a2d7592289650bd5198630b2892314d9aa79adb4"),
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("9996f433e8b19f4f7dd4ed4be858be1da06a720e6718a3ab2198f5711556af9e"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
     ),
