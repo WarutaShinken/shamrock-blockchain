@@ -25,6 +25,7 @@ if [ "$(uname)" = "Linux" ]; then
 		# Debian/Ubuntu
 		UBUNTU=true
 		sudo apt-get install -y npm nodejs libxss1
+		sudo npm install --global yarn
 	elif type yum &&  [ ! -f "/etc/redhat-release" ] && [ ! -f "/etc/centos-release" ] && [ ! -f /etc/rocky-release ]; then
 		# AMZN 2
 		echo "Installing on Amazon Linux 2."
@@ -45,6 +46,7 @@ if [ "$(uname)" = "Linux" ]; then
 elif [ "$(uname)" = "Darwin" ] && type brew && ! npm version >/dev/null 2>&1; then
 	# Install npm if not installed
 	brew install npm
+	npm install --global yarn
 elif [ "$(uname)" = "OpenBSD" ]; then
 	pkg_add node
 elif [ "$(uname)" = "FreeBSD" ]; then
@@ -61,7 +63,7 @@ fi
 if [ "$UBUNTU_PRE_2004" = "True" ]; then
 	echo "Installing on Ubuntu older than 20.04 LTS: Ugrading node.js to stable."
 	UBUNTU_PRE_2004=true # Unfortunately Python returns True when shell expects true
-	sudo npm install -g n
+	sudo yarn
 	sudo n stable
 	export PATH="$PATH"
 fi
@@ -92,9 +94,9 @@ if [ ! "$CI" ]; then
 		echo ""
 	fi
 
-	npm install
-	npm audit fix || true
-	npm run build
+	yarn
+	yarn audit fix || true
+	yarn run build
 else
 	echo "Skipping node.js in install.sh on MacOS ci."
 fi
@@ -102,4 +104,4 @@ fi
 echo ""
 echo "Shamrock blockchain install-gui.sh completed."
 echo ""
-echo "Type 'cd shamrock-blockchain-gui' and then 'npm run electron &' to start the GUI."
+echo "Type 'cd shamrock-blockchain-gui' and then 'yarn run electron &' to start the GUI."

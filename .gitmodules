@@ -1,7 +1,7 @@
 [submodule "shamrock-blockchain-gui"]
 	path = shamrock-blockchain-gui
 	url = https://github.com/Shamrock-Network/shamrock-blockchain-gui.git
-	branch = pools
+	branch = main
 [submodule "mozilla-ca"]
 	path = mozilla-ca
 	url = https://github.com/Shamrock-Network/mozilla-ca.git
