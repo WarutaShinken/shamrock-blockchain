@@ -3,15 +3,15 @@ from shamrock.util.ints import uint64
 from .constants import ConsensusConstants
 
 testnet_kwargs = {
-    "SLOT_BLOCKS_TARGET": 64,
+    "SLOT_BLOCKS_TARGET": 32,
     "MIN_BLOCKS_PER_CHALLENGE_BLOCK": 16,  # Must be less than half of SLOT_BLOCKS_TARGET
     "MAX_SUB_SLOT_BLOCKS": 128,  # Must be less than half of SUB_EPOCH_BLOCKS
     "NUM_SPS_SUB_SLOT": 64,  # Must be a power of 2
-    "SUB_SLOT_ITERS_STARTING": 2 ** 10,
+    "SUB_SLOT_ITERS_STARTING": 2 ** 22,
     # DIFFICULTY_STARTING is the starting difficulty for the first epoch, which is then further
     # multiplied by another factor of DIFFICULTY_CONSTANT_FACTOR, to be used in the VDF iter calculation formula.
-    "DIFFICULTY_CONSTANT_FACTOR": 2 ** 25,
-    "DIFFICULTY_STARTING": 2 ** 12,
+    "DIFFICULTY_CONSTANT_FACTOR": 2 ** 62,
+    "DIFFICULTY_STARTING": 7,
     "DIFFICULTY_CHANGE_MAX_FACTOR": 2,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
     # These 3 constants must be changed at the same time
     "SUB_EPOCH_BLOCKS": 384,  # The number of blocks per sub-epoch, mainnet 384
@@ -21,16 +21,16 @@ testnet_kwargs = {
     "NUMBER_ZERO_BITS_PLOT_FILTER": 9,  # H(plot signature of the challenge) must start with these many zeroes
     "MIN_PLOT_SIZE": 32,  # 32 for mainnet
     "MAX_PLOT_SIZE": 50,
-    "SUB_SLOT_TIME_TARGET": 81.28,  # The target number of seconds per slot, mainnet 600
+    "SUB_SLOT_TIME_TARGET": 96,  # The target number of seconds per slot, mainnet 96
     "NUM_SP_INTERVALS_EXTRA": 3,  # The number of sp intervals to add to the signage point
     "MAX_FUTURE_TIME": 5 * 60,  # The next block can have a timestamp of at most these many seconds in the future
     "NUMBER_OF_TIMESTAMPS": 11,  # Than the average of the last NUMBER_OF_TIMESTAMPS blocks
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("444b82d15ff75e32de64587dc979c5b7c8b8470478e49b0f2d2afbde9a39e418"),
+    "GENESIS_CHALLENGE": bytes.fromhex("793543a3e5b4f7412f45d5fec80f234ecd2070e07d045b1620f9a5ee6debc088"),
     # Forks of chia should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("3da7a2d563f8076d22f60928a1663163d46d5f64de9bdfacab691693ff91f0db"),
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("34a80fcee2c2bafa6b5c8ba171e7571198b4838b89e03f750dc2e8d10b0ee513"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
     ),

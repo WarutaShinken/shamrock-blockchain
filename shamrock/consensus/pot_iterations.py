@@ -4,8 +4,6 @@ from shamrock.types.blockchain_format.sized_bytes import bytes32
 from shamrock.util.hash import std_hash
 from shamrock.util.ints import uint8, uint64, uint128
 
-ITERATIONS_QUALITY_DIVIDED = int(pow(2, 18))
-
 def is_overflow_block(constants: ConsensusConstants, signage_point_index: uint8) -> bool:
     if signage_point_index >= constants.NUM_SPS_SUB_SLOT:
         raise ValueError("SP index too high")
@@ -60,9 +58,7 @@ def calculate_iterations_quality(
     iters = uint64(
         int(difficulty)
         * int(difficulty_constant_factor)
-        * (int.from_bytes(sp_quality_string, "big", signed=False)
-            // (ITERATIONS_QUALITY_DIVIDED * int(pow(2, 256)))
-           )
-        // int(_expected_plot_size(size))
+        * int.from_bytes(sp_quality_string, "big", signed=False)
+        // (int(pow(2, 256)) * int(_expected_plot_size(size)))
     )
     return max(iters, uint64(1))
