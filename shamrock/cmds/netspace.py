@@ -18,9 +18,9 @@ import click
     "--delta-block-height",
     help=(
         "Compare a block X blocks older to estimate total network space. "
-        "Defaults to 86400 blocks (~1 day) and Peak block as the starting block. "
+        "Defaults to 43200 blocks (~1 day) and Peak block as the starting block. "
         "Use --start BLOCK_HEIGHT to specify starting block. "
-        "Use 3600 blocks to estimate over the last hour."
+        "Use 1800 blocks to estimate over the last hour."
     ),
     type=str,
     default="768",
