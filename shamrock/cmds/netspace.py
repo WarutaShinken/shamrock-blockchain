@@ -8,7 +8,7 @@ import click
     help=(
         "Set the port where the Full Node is hosting the RPC interface. "
         "See the rpc_port under full_node in config.yaml. "
-        "[default: 9555]"
+        "[default: 9551]"
     ),
     type=int,
     default=None,
@@ -23,7 +23,7 @@ import click
         "Use 1800 blocks to estimate over the last hour."
     ),
     type=str,
-    default="768",
+    default="43200",
 )
 @click.option(
     "-s",

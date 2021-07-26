@@ -11,7 +11,7 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: cfe428164abaae137f5c91f46344639f34e2f7965d688dbb501084764c32fd38
+      GENESIS_CHALLENGE: 0a1ac058c3d68d73c31c0b8b91a358c100346e99c4638869682dcd3f5db0bad4
       GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "6e95df6cad92e52ac0cac6d71be4daef0302ecbcfb7168747d12a53faed69079"
       GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "92c8beaf58ee8df3c736e9ff95551161ad9bcfe2d3a13934864b2787a1d2ff02"
   config:
@@ -189,7 +189,7 @@ full_node:
 
   # If True, starts an RPC server at the following port
   start_rpc_server: True
-  rpc_port: 9555
+  rpc_port: 9551
 
   # Use UPnP to attempt to allow other full nodes to reach your node behind a gateway
   enable_upnp: True
@@ -234,7 +234,7 @@ full_node:
   # List of trusted DNS seeders to bootstrap from.
   # If you modify this, please change the hardcode as well from FullNode.set_server()
   dns_servers:
-    - "introducer-testnet.shamrock.network"
+    - "dns-introducer.shamrock.network"
   farmer_peer:
       host: *self_hostname
       port: 9337
@@ -242,11 +242,11 @@ full_node:
       host: *self_hostname
       port: 9336
   introducer_peer:
-      host: introducer-testnet.shamrock.network  # Shamrock AWS introducer IPv4/IPv6
-      port: 9445
+      host: dns-introducer.shamrock.network  # Shamrock AWS introducer IPv4/IPv6
+      port: 9443
   wallet_peer:
     host: *self_hostname
-    port: 9449
+    port: 9441
   logging: *logging
   network_overrides: *network_overrides
   selected_network: *selected_network
@@ -259,10 +259,10 @@ full_node:
 
 ui:
    # The ui node server (if run) will run on this port
-  port: 8222
+  port: 8221
 
   # Which port to use to communicate with the full node
-  rpc_port: 9555
+  rpc_port: 9551
 
   # This SSH key is for the ui SSH server
   ssh_filename: config/ssh_host_key
@@ -280,7 +280,7 @@ ui:
 
 introducer:
   host: *self_hostname
-  port: 9445
+  port: 9443
   max_peers_to_send: 20
   # The introducer will only return peers who it has seen in the last
   # recent_peer_threshold seconds
@@ -294,7 +294,7 @@ introducer:
     public_key:  "config/ssl/full_node/public_full_node.key"
 
 wallet:
-  port: 9449
+  port: 9441
   rpc_port: 9367
 
   enable_profiler: False
@@ -326,8 +326,8 @@ wallet:
   recent_peer_threshold: 6000
 
   introducer_peer:
-    host: introducer-testnet.shamrock.network # Shamrock AWS introducer IPv4/IPv6
-    port: 9445
+    host: dns-introducer.shamrock.network # Shamrock AWS introducer IPv4/IPv6
+    port: 9443
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"

@@ -14,8 +14,8 @@ testnet_kwargs = {
     "DIFFICULTY_STARTING": 7,
     "DIFFICULTY_CHANGE_MAX_FACTOR": 2,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
     # These 3 constants must be changed at the same time
-    "SUB_EPOCH_BLOCKS": 384,  # The number of blocks per sub-epoch, mainnet 384
-    "EPOCH_BLOCKS": 768,  # The number of blocks per epoch, mainnet 4608. Must be multiple of SUB_EPOCH_SB
+    "SUB_EPOCH_BLOCKS": 3600,  # The number of blocks per sub-epoch, mainnet 3600 ~ 2 hours
+    "EPOCH_BLOCKS": 43200,  # The number of blocks per epoch, mainnet 43200 ~ 1 days. Must be multiple of SUB_EPOCH_SB
     "SIGNIFICANT_BITS": 8,  # The number of bits to look at in difficulty and min iters. The rest are zeroed
     "DISCRIMINANT_SIZE_BITS": 1024,  # Max is 1024 (based on ClassGroupElement int size)
     "NUMBER_ZERO_BITS_PLOT_FILTER": 9,  # H(plot signature of the challenge) must start with these many zeroes
@@ -28,9 +28,9 @@ testnet_kwargs = {
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("cfe428164abaae137f5c91f46344639f34e2f7965d688dbb501084764c32fd38"),
+    "GENESIS_CHALLENGE": bytes.fromhex("0a1ac058c3d68d73c31c0b8b91a358c100346e99c4638869682dcd3f5db0bad4"),
     # Forks of chia should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("156c9e508b863ef84380c3c511935057357c3ea3c49fa5995046b287da4273f2"),
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("c1694072eab0b145303b831c3b49353e9e3f5be97728386701108e6e430cdc9c"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
     ),
@@ -47,10 +47,10 @@ testnet_kwargs = {
     # The cost per byte of generator program
     "COST_PER_BYTE": 12000,
     "WEIGHT_PROOF_THRESHOLD": 2,
-    "BLOCKS_CACHE_SIZE": 4608 + (128 * 4),
+    "BLOCKS_CACHE_SIZE": 43200 + (128 * 4),
     "WEIGHT_PROOF_RECENT_BLOCKS": 380,
     "MAX_BLOCK_COUNT_PER_REQUESTS": 32,  # Allow up to 32 blocks per request
-    "INITIAL_FREEZE_END_TIMESTAMP": 1620061200,  # Mon May 03 2021 17:00:00 GMT+0000
+    "INITIAL_FREEZE_END_TIMESTAMP": 1627318800,  # Mon Jul 26 2021 17:00:00 GMT+0000
     "NETWORK_TYPE": 0,
     "MAX_GENERATOR_SIZE": 1000000,
     "MAX_GENERATOR_REF_LIST_SIZE": 512,  # Number of references allowed in the block generator ref list
