@@ -11,13 +11,13 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: 5c4f6f62e1ca61d18a2c98f29ca65f6a9198d0f1cc461955071ec7b1bb7de9dc
+      GENESIS_CHALLENGE: c8f09f8ccbaeda1d941893622b33212fbe4a46b010be75c4e3eb8e652171beb7
       GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "6e95df6cad92e52ac0cac6d71be4daef0302ecbcfb7168747d12a53faed69079"
       GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "92c8beaf58ee8df3c736e9ff95551161ad9bcfe2d3a13934864b2787a1d2ff02"
   config:
     mainnet:
       address_prefix: "srn"
-      default_full_node_port: 9333
+      default_full_node_port: 9359
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.shamrock.net/notify/mainnet_alert.txt
@@ -95,7 +95,7 @@ farmer:
   # The farmer will attempt to connect to this full node and harvester
   full_node_peer:
     host: *self_hostname
-    port: 9333
+    port: 9359
   harvester_peer:
     host: *self_hostname
     port: 9338
@@ -144,7 +144,7 @@ timelord:
       - 150000
   full_node_peer:
       host: *self_hostname
-      port: 9333
+      port: 9359
   # Maximum number of seconds allowed for a client to reconnect to the server.
   max_connection_time: 60
   # The ip and port where the TCP clients will connect.
@@ -179,7 +179,7 @@ timelord:
 
 full_node:
   # The full node server (if run) will run on this port
-  port: 9333
+  port: 9359
 
   # Run multiple nodes with different databases by changing the database_path
   database_path: db/blockchain_v1_CHALLENGE.sqlite
@@ -309,7 +309,7 @@ wallet:
 
   full_node_peer:
     host: *self_hostname
-    port: 9333
+    port: 9359
 
   testing: False
   database_path: wallet/db/blockchain_wallet_v1_CHALLENGE_KEY.sqlite

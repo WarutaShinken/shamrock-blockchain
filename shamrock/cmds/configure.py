@@ -85,7 +85,7 @@ def configure(
     if testnet is not None:
         if testnet == "true" or testnet == "t":
             print("Setting Testnet")
-            testnet_port = "59333"
+            testnet_port = "59359"
             testnet_introducer = "beta1_introducer-testnet.shamrock.network"
             testnet = "testnet7"
             config["full_node"]["port"] = int(testnet_port)
@@ -110,7 +110,7 @@ def configure(
 
         elif testnet == "false" or testnet == "f":
             print("Setting Mainnet")
-            mainnet_port = "9333"
+            mainnet_port = "9359"
             mainnet_introducer = "introducer-testnet.shamrock.network"
             net = "mainnet"
             config["full_node"]["port"] = int(mainnet_port)
