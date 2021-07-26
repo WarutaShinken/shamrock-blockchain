@@ -11,7 +11,7 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: 0a1ac058c3d68d73c31c0b8b91a358c100346e99c4638869682dcd3f5db0bad4
+      GENESIS_CHALLENGE: 5c4f6f62e1ca61d18a2c98f29ca65f6a9198d0f1cc461955071ec7b1bb7de9dc
       GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "6e95df6cad92e52ac0cac6d71be4daef0302ecbcfb7168747d12a53faed69079"
       GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "92c8beaf58ee8df3c736e9ff95551161ad9bcfe2d3a13934864b2787a1d2ff02"
   config:
@@ -243,7 +243,7 @@ full_node:
       port: 9336
   introducer_peer:
       host: dns-introducer.shamrock.network  # Shamrock AWS introducer IPv4/IPv6
-      port: 9333
+      port: 9443
   wallet_peer:
     host: *self_hostname
     port: 9441
@@ -327,7 +327,7 @@ wallet:
 
   introducer_peer:
     host: dns-introducer.shamrock.network # Shamrock AWS introducer IPv4/IPv6
-    port: 9333
+    port: 9443
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"

@@ -28,9 +28,9 @@ testnet_kwargs = {
     # Used as the initial cc rc challenges, as well as first block back pointers, and first SES back pointer
     # We override this value based on the chain being run (testnet0, testnet1, mainnet, etc)
     # Default used for tests is std_hash(b'')
-    "GENESIS_CHALLENGE": bytes.fromhex("0a1ac058c3d68d73c31c0b8b91a358c100346e99c4638869682dcd3f5db0bad4"),
+    "GENESIS_CHALLENGE": bytes.fromhex("5c4f6f62e1ca61d18a2c98f29ca65f6a9198d0f1cc461955071ec7b1bb7de9dc"),
     # Forks of chia should change this value to provide replay attack protection. This is set to mainnet genesis chall
-    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("c1694072eab0b145303b831c3b49353e9e3f5be97728386701108e6e430cdc9c"),
+    "AGG_SIG_ME_ADDITIONAL_DATA": bytes.fromhex("fa7cdacdf97fc05d9d9a8eb5b77e0b5528a420106887893d011f168580d66dd1"),
     "GENESIS_PRE_FARM_POOL_PUZZLE_HASH": bytes.fromhex(
         "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
     ),
