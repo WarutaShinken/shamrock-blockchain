@@ -14,8 +14,8 @@ testnet_kwargs = {
     "DIFFICULTY_STARTING": 7,
     "DIFFICULTY_CHANGE_MAX_FACTOR": 2,  # The next difficulty is truncated to range [prev / FACTOR, prev * FACTOR]
     # These 3 constants must be changed at the same time
-    "SUB_EPOCH_BLOCKS": 384,  # The number of blocks per sub-epoch, mainnet 3600 ~ 2 hours
-    "EPOCH_BLOCKS": 768,  # The number of blocks per epoch, mainnet 43200 ~ 1 days. Must be multiple of SUB_EPOCH_SB
+    "SUB_EPOCH_BLOCKS": 384,  # The number of blocks per sub-epoch, mainnet 384
+    "EPOCH_BLOCKS": 768,  # The number of blocks per epoch, mainnet 768. Must be multiple of SUB_EPOCH_SB
     "SIGNIFICANT_BITS": 8,  # The number of bits to look at in difficulty and min iters. The rest are zeroed
     "DISCRIMINANT_SIZE_BITS": 1024,  # Max is 1024 (based on ClassGroupElement int size)
     "NUMBER_ZERO_BITS_PLOT_FILTER": 9,  # H(plot signature of the challenge) must start with these many zeroes
@@ -47,7 +47,7 @@ testnet_kwargs = {
     # The cost per byte of generator program
     "COST_PER_BYTE": 12000,
     "WEIGHT_PROOF_THRESHOLD": 2,
-    "BLOCKS_CACHE_SIZE": 43200 + (128 * 4),
+    "BLOCKS_CACHE_SIZE": 768 + (128 * 4),
     "WEIGHT_PROOF_RECENT_BLOCKS": 380,
     "MAX_BLOCK_COUNT_PER_REQUESTS": 32,  # Allow up to 32 blocks per request
     "INITIAL_FREEZE_END_TIMESTAMP": 1627318800,  # Mon Jul 26 2021 17:00:00 GMT+0000
